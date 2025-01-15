@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruzbe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/img/fav.png">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="mobile_header">
+        <ul>
+            <i class='bx bx-x'></i>
+            <li><a href="index.html" style="color: white;font-weight: bold;">Home</a></li>
+            <li><a href="works/index.html">Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <header>
+        <h2>Ruzbe</h2>
+        <ul>
+            <li><a href="index.html" style="color: white;font-weight: bold;">Home</a></li>
+            <li><a href="works/index.html">Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="https://github.com/rtm200" target="_blank" class="talk"><i class='bx bxl-github'></i>Github</a>
+        <i class='bx bx-menu burger'></i>
+    </header>
+
+    <!-- main -->
+    <main>
+        <section class="first">
+            <div class="first_left">
+                <img src="img/face.webp" width="220px" alt="">
+                <div class="first_left_content">
+                    <h4>A WEB DEVELOPER</h4>
+                    <h2>Ruzbe Attar</h2>
+                    <p>HeHeHeHe BlawBlaw Heh Exams</p>
+                </div>
+            </div>
+            <div class="first_right">
+                <div class="first_right_top">
+                    <marquee behavior="scroll" direction="rtl"> LATEST WORK AND <span
+                            style="color: white;">FEATURED</span></marquee>
+                </div>
+                <div class="first_right_flex">
+                    <span class="first_right_flex_left">
+                        <i class='bx bx-certification'></i>
+                        <div>
+                            <h5>Certificates</h5>
+                            <h2>Certificates</h2>
+                        </div>
+                        <img src="img/r.webp" alt="">
+                    </span>
+                    <a href="works/index.html" class="first_right_flex_right">
+                        <i class='bx bxs-archive'></i>
+                        <div>
+                            <h5>SHOW CASE</h5>
+                            <h2>Projects</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="second">
+            <div class="second_left">
+                <div class="Message_box">
+                    <div class="mb-header">
+                        <h6>MESSAGES</h6>
+                        <h6>now</h6>
+                    </div>
+                    <div class="mb-title">
+                        <h5>Nişantaşı Üniversitesi</h5>
+                        <h6>1 year Untill graduate...</h6>
+                        <p>2 more notifications</p>
+                    </div>
+                    <span class="old_mb"></span>
+                    <span class="old_mb2"></span>
+                </div>
+            </div>
+
+            <div class="second_center">
+                <h2 id="display_skills"></h2>
+                <ul class="second_center_icons" id="skills">
+                    <li value="HTML"><i class='bx bxl-html5'></i></li>
+                    <li value="CSS"><i class='bx bxl-css3'></i></li>
+                    <li value="PHP"><i class='bx bxl-php'></i></li>
+                    <li value="DJANGO"><i class='bx bxl-django'></i></li>
+                    <li value="REACT JS"><i class='bx bxl-react'></i></li>
+                    <li value="JAVASCRIPT"><i class='bx bxl-javascript'></i></li>
+                    <li value="WEB SECURITY"><i class='bx bxs-injection'></i></li>
+                </ul>
+            </div>
+            <div class="second_right">
+                <div class="second_right_pages">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-whatsapp'></i></a>
+                </div>
+                <div class="second_right_content">
+                    <h5>STAY WITH ME</h5>
+                    <h2>Profiles</h2>
+                </div>
+            </div>
+        </section>
+        <section class="third">
+            <div class="third_left">
+                <div class="third_left-card">
+                    <h2>07</h2>
+                    <h4>YEARS <br> EXPERIENCE</h4>
+                </div>
+                <div class="third_left-card">
+                    <h2>+125</h2>
+                    <h4>CLIENTS <br> WORLDWIDE</h4>
+                </div>
+                <div class="third_left-card">
+                    <h2>+210</h2>
+                    <h4>TOTAL <br> PROJECTS</h4>
+                </div>
+            </div>
+            <div class="third_right">
+                <h2>Let's <br> work <span style="color:white;">together</span><i class='bx bx-chevron-right'></i></h2>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+
+
+    /* show skill on hover script */
+    const icons = document.querySelectorAll('.second_center_icons i');
+    const display = document.getElementById('display_skills');
+
+    icons.forEach(icon => {
+        icon.addEventListener('mouseover', function () {
+            const skill = this.parentElement.getAttribute('value'); 
+            display.textContent = skill;
+            display.classList.add('display_skills_fadeIn');
+            display.classList.remove('display_skills_fadeOut');
+        });
+
+        icon.addEventListener('mouseleave', function () {
+            display.classList.add('display_skills_fadeOut');
+            display.classList.remove('display_skills_fadeIn');
+        });
+
+        let lighter = false;
+        icon.addEventListener('click', function () {
+            const skill = this.parentElement.getAttribute('value'); 
+            
+            function turnOn() {
+                icon.style.backgroundColor = 'white';
+                icon.style.color = 'black';
+                lighter = !lighter;
+            }
+            function turnOff() {
+                icon.style.backgroundColor = 'transparent';
+                icon.style.color = 'white';
+                lighter = !lighter;
+            }
+            if(lighter) {
+                turnOff();
+            }
+            else{
+                turnOn();
+            }
+        });
+    });
+
+
+</script>
+<script>
+    //navbar
+    $(document).ready(function () {
+        $(".burger").click(function () {
+            $(".mobile_header").toggle();
+        });
+        $(".bx-x").click(function () {
+            $(".mobile_header").toggle();
+        });
+        $(window).resize(function () {
+            if (window.innerWidth > 1000) {
+                $(".mobile_header").css("display", "none");
+            }
+        });
+    });
+</script>
+
+</html>
