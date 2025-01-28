@@ -13,9 +13,11 @@ body {
     margin: 0 auto;
     max-width: 1200px;
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 /* header */
 .mobile_header {
     display: none;
@@ -62,9 +64,11 @@ header .talk {
     transition: 0.5s;
 
 }
-header .talk i{
+
+header .talk i {
     font-size: 1.125rem;
 }
+
 
 header .talk:hover {
     background-color: hsl(0, 0%, 100%);
@@ -93,54 +97,80 @@ header .burger {
 /* main */
 /* main */
 
-main{
+main {
     margin: 5rem 0;
     color: white;
 }
-main h3{
+
+main h3 {
     font-size: 3rem;
     font-weight: 800;
     color: white;
 }
-main p{
+
+main p {
     color: hsl(0, 0%, 45%);
 }
-main ul{
-    margin: 3rem 0;
+main img{
+    width: 100%;
+    margin: 2rem 0;
 }
-main ul li{
-    font-size: 1rem;
-    color: white;
+.editor-line{
+    display: flex;
+    width: 100%;
+    border: 1px solid hsl(0, 0%, 40%);
+    margin: 10px 0 20px 0;
+}
+.code-editor {
+    position: relative;
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    padding: 20px;
+    color: #f8f8f2;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
+.code-editor pre {
+    margin: 0;
 }
-.cards a i{
-    font-size: 2rem;
+
+.code-editor .copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
 }
-.cards a {
-    min-height: 100px;
-    color: white;
-    text-decoration: none;
-    font-size: 1.25rem;
-    padding: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border: 1px solid hsl(0, 0%, 25%);
-    border-radius: 100px;
-    transition: 0.5s;
+
+.code-editor .copy-btn:hover {
+    background-color: #e68900;
 }
-.cards a:hover {
-    color: black;
-    background-color: #f0f0f0;
+
+.code-editor .line-numbers {
+    counter-reset: line;
+}
+
+.code-editor .line-numbers span {
+    display: inline-block;
+    text-align: right;
+    width: 30px;
+    margin-right: 10px;
+    color: #757575;
+    user-select: none;
+}
+
+.code-editor .line-numbers span:before {
+    counter-increment: line;
+    content: counter(line);
 }
 
 @media only screen and (max-width: 1200px) {
@@ -149,9 +179,7 @@ main ul li{
         padding: 0 2rem;
         max-width: 900px;
     }
-    .cards {
-        grid-template-columns: repeat(3, 1fr);
-    }
+
     /* header */
     .mobile_header {
         position: fixed;
@@ -225,13 +253,4 @@ main ul li{
 
 }
 
-@media only screen and (max-width: 800px) {
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media only screen and (max-width: 600px) {
-    .cards {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
+@media only screen and (max-width: 600px) {}
