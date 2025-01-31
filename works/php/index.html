@@ -14,6 +14,7 @@
 
 <body>
     <!-- header -->
+    <div class="mobile_header-blur"></div>
     <div class="mobile_header">
         <ul>
             <i class='bx bx-x'></i>
@@ -25,7 +26,7 @@
         </ul>
     </div>
     <header>
-        <h2>Ruzbe</h2>
+        <h2><a href="../../index.html" style="text-decoration: none; color: white;">Ruzbe</a></h2>
         <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../../aboutme.html">About me</a></li>
@@ -272,16 +273,22 @@
     $(document).ready(function () {
         $(".burger").click(function () {
             $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
         });
         $(".bx-x").click(function () {
             $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(".mobile_header-blur").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
         });
         $(window).resize(function () {
             if (window.innerWidth > 1000) {
                 $(".mobile_header").css("display", "none");
+                $(".mobile_header-blur").css("display", "none");
             }
         });
     });
 </script>
-
 </html>
