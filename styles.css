@@ -436,7 +436,7 @@ header .burger {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; 
+    overflow: hidden;
 }
 .swiper {
     width: 100%;
@@ -450,6 +450,7 @@ header .burger {
     display: flex;
     padding: 2rem;
 }
+
 .slider-container{
     display: flex;
     align-items: center;
@@ -520,8 +521,80 @@ header .burger {
     width: 50%;
     height: 100%;
 }
+.slider-container-right .react-skill::after{
+    position: absolute;
+    content: '70%';
+    bottom:100%;
+    right: 0;
+    font-size: 0.875rem;
+}
+.slider-container-right .react-skill::before{
+    position: absolute;
+    content: '';
+    bottom:0;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+    width: 70%;
+    height: 100%;
+}
+.slider-container-right .php-skill::after{
+    position: absolute;
+    content: '90%';
+    bottom:100%;
+    right: 0;
+    font-size: 0.875rem;
+}
+.slider-container-right .php-skill::before{
+    position: absolute;
+    content: '';
+    bottom:0;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+    width: 90%;
+    height: 100%;
+}
+.slider-container-right .python-skill::after{
+    position: absolute;
+    content: '60%';
+    bottom:100%;
+    right: 0;
+    font-size: 0.875rem;
+}
+.slider-container-right .python-skill::before{
+    position: absolute;
+    content: '';
+    bottom:0;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+    width: 60%;
+    height: 100%;
+}
+.slider-container-right .hack-skill::after{
+    position: absolute;
+    content: '80%';
+    bottom:100%;
+    right: 0;
+    font-size: 0.875rem;
+}
+.slider-container-right .hack-skill::before{
+    position: absolute;
+    content: '';
+    bottom:0;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+    width: 80%;
+    height: 100%;
+}
 .slider-container-right p{
-    color: hsl(0, 0%, 45%);
+    color: hsl(0, 0%, 75%);
 }
 .swiper-pagination-bullet{
     background-color: hsl(0, 0%, 75%) !important;
