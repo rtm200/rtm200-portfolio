@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+
+body {
+    background-color: #0F0F0F;
+    padding: 0 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+a{
+    text-decoration: none;
+}
+/* header */
+.mobile_header-blur{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.621);
+    z-index: 999;
+    cursor: pointer;
+}
+.mobile_header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 100px;
+    z-index: 1000;
+    padding: 2rem;
+    background: rgb(83,0,87);
+    background: linear-gradient(273deg, rgba(83,0,87,1) 0%, rgba(25,25,25,1) 100%);
+    border-radius: 0 0 1rem 1rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgb(143, 0, 150);
+}
+
+.mobile_header ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+    gap: 1rem;
+}
+
+.mobile_header ul li a {
+    font-size: 1.125rem;
+    text-decoration: none;
+    color: hsl(0, 0%, 45%);
+    text-align: center;
+    transition: 0.5s;
+}
+.mobile_header ul li a:hover {
+    color: white;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    color: hsl(0, 0%, 45%);
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+header ul li a:hover {
+    color: hsl(0, 0%, 100%);
+}
+
+header .talk {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0.875rem 2rem;
+    margin: 0;
+    border-radius: 14px;
+    background-color: hsl(0, 0%, 15%);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.5s;
+
+}
+header .talk i{
+    font-size: 1.125rem;
+}
+
+header .talk:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: black;
+
+}
+
+header h2 {
+    color: white;
+}
+
+header .burger {
+    display: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.bx-x {
+    display: none;
+    color: white;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+/* main */
+/* main */
+/* main */
+/* main */
+
+main{
+    margin: 5rem 0;
+    color: white;
+}
+
+/* change */
+h1{
+    font-size: 2.5rem;
+    font-weight: 900;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1rem;
+}
+ol{
+    padding: 0 0 0 2rem;
+    margin: 2rem;
+}
+ol h2{
+    padding-bottom: 10px;
+}
+ol li{
+    margin-left: 2rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+ol li a{
+   color: hsl(0, 0%, 45%);
+   cursor: pointer;
+   text-decoration: none;
+   font-weight: 700;
+   transition: 0.3s;
+}
+ol li a:hover{
+    color: rgb(213, 28, 213);
+}
+/* end of change */
+
+
+@media only screen and (max-width: 1200px) {
+    body {
+        background-color: #0F0F0F;
+        padding: 0 2rem;
+        max-width: 900px;
+    }
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* header */
+    .bx-x {
+        display: block;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    header .talk {
+        display: none;
+    }
+
+    header .burger {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    h1{
+        font-size: 2rem;
+    }
+    ol{
+        padding: 0 0 0 20px;
+        margin: 2rem 0;
+    }
+    ol h2{
+        padding-bottom: 5px;
+        font-size: 1.125rem;
+    }
+    ol li{
+        font-size: 1rem;
+        margin-left: 35px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .mobile_header ul li a {
+        font-size: 1rem;
+        text-decoration: none;
+        color: hsl(0, 0%, 45%);
+        text-align: center;
+        transition: 0.5s;
+    }
+}

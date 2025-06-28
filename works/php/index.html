@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruzbe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/img/fav.png">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="mobile_header-blur"></div>
+    <div class="mobile_header">
+        <ul>
+            <i class='bx bx-x'></i>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../aboutme.html">About me</a></li>
+            <li><a href="../index.html" style="color: white;font-weight: bold;">Works</a></li>
+            <li><a href="../../contact.html">Contact</a></li>
+            <li><a href="../../aboutme.html">CV</a></li>
+        </ul>
+    </div>
+    <header>
+        <h2><a href="../../index.html" style="text-decoration: none; color: white;">Ruzbe</a></h2>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../aboutme.html">About me</a></li>
+            <li><a href="../index.html" style="color: white;font-weight: bold;">Works</a></li>
+            <li><a href="../../contact.html">Contact</a></li>
+            <li><a href="../../aboutme.html">CV</a></li>
+        </ul>
+        <a href="https://github.com/rtm200" target="_blank" class="talk"><i class='bx bxl-github'></i>Github</a>
+        <i class='bx bx-menu burger'></i>
+    </header>
+
+    <!-- main -->
+    <main>
+        <h3>simple php project in oop method</h3>
+        <p>its a shopping system</p>
+        <img src="../../img/shop.jpeg" />
+        <div style="margin: 4rem 0;">
+            <h2>The Database code</h2>
+            <div class="code-editor">
+                <h2>db.php</h2>
+                <span class="editor-line"></span>
+                <a href="https://github.com/rtm200/php-shop" target="_blank" class="copy-btn">Full code</a>
+                <pre class="line-numbers">
+                    <span></span>&lt;?php
+
+                    <span></span>class Database {
+                    <span></span>    private $host = "localhost";
+                    <span></span>    private $db_name = "blawblaw";
+                    <span></span>    private $username = "root";
+                    <span></span>    private $password = "";
+                    <span></span>    private $conn;
+                    
+                    <span></span>    public function connect() {
+                    <span></span>        $this->conn = null;
+                    
+                    <span></span>        try {
+                    <span></span>            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+                    <span></span>            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    
+                    <span></span>        } catch (PDOException $e) {
+                    <span></span>            echo "Connection failed: " . $e->getMessage();
+                    <span></span>        }
+                    
+                    <span></span>        return $this->conn;
+                    <span></span>    }
+                    <span></span>}
+
+                    <span></span>?&gt;
+                        </pre>
+            </div>
+        </div>
+        <div style="margin: 4rem 0;">
+            <h2>This is the Main page</h2>
+            <div class="code-editor">
+                <h2>index.php</h2>
+                <span class="editor-line"></span>
+                <a href="https://github.com/rtm200/php-shop" target="_blank" class="copy-btn">Full code</a>
+                <pre class="line-numbers">
+                    <span></span>&lt;section id="products" class="products"&gt;
+                    <span></span>    &lt;h3&gt;All the Products&lt;/h3&gt;
+                    <span></span>    &lt;div class="productCards"&gt;
+                    <span></span>        &lt;?php 
+                    <span></span>            include_once 'classes/fetch.php';            
+                    <span></span>            $get = new GET();
+                    
+                    <span></span>            $productsPerPage = 10;
+                    <span></span>            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+                    <span></span>            $offset = ($page - 1) * $productsPerPage;
+                    
+                    <span></span>            $totalProducts = $get-&gt;getTotalProducts();
+                    <span></span>            $totalPages = ceil($totalProducts / $productsPerPage);
+                    
+                    <span></span>            $get-&gt;getProductsPaginated($offset, $productsPerPage);
+                    <span></span>        ?&gt;
+                    <span></span>    &lt;/div&gt;
+                    <span></span>    &lt;div class="pagination"&gt;
+                    <span></span>        &lt;?php if ($page &gt; 1): ?&gt;
+                    <span></span>            &lt;a href="?page=&lt;?php echo $page - 1; ?&gt;"&gt;&amp;laquo; Previous&lt;/a&gt;
+                    <span></span>        &lt;?php endif; ?&gt;
+                    
+                    <span></span>        &lt;?php for ($i = 1; $i &lt;= $totalPages; $i++): ?&gt;
+                    <span></span>            &lt;a href="?page=&lt;?php echo $i; ?&gt;#products" &lt;?php echo $i === $page ? 'class="active"' : ''; ?&gt;&gt;
+                    <span></span>                &lt;?php echo $i; ?&gt;
+                    <span></span>            &lt;/a&gt;
+                    <span></span>        &lt;?php endfor; ?&gt;
+                    
+                    <span></span>        &lt;?php if ($page &lt; $totalPages): ?&gt;
+                    <span></span>            &lt;a href="?page=&lt;?php echo $page + 1; ?&gt;"&gt;Next &amp;raquo;&lt;/a&gt;
+                    <span></span>        &lt;?php endif; ?&gt;
+                    <span></span>    &lt;/div&gt;
+                    <span></span>&lt;/section&gt;  
+                </pre>
+            </div>
+        </div>
+        <div style="margin: 4rem 0;">
+            <h2>The class that INSERTS items to cart</h2>
+            <div class="code-editor">
+                <h2>add_to_cart.php</h2>
+                <span class="editor-line"></span>
+                <a href="https://github.com/rtm200/php-shop" target="_blank" class="copy-btn">Full code</a>
+                <pre class="line-numbers">
+                    <span></span>&lt;?php
+                    <span></span>include_once 'db.php';
+
+                    <span></span>$db = new Database();
+                    <span></span>$conn = $db-&gt;connect();
+
+                    <span></span>if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    <span></span>    $productId = $_POST['product_id'];
+
+                    <span></span>    if (!empty($productId) && is_numeric($productId)) {
+                    <span></span>        try {
+                    <span></span>            $sql = "INSERT INTO cart (product_id) VALUES (:product_id)";
+                    <span></span>            $stmt = $conn-&gt;prepare($sql);
+                    <span></span>            $stmt-&gt;bindParam(':product_id', $productId, PDO::PARAM_INT);
+                    <span></span>            $stmt-&gt;execute();
+
+                    <span></span>        } catch (PDOException $e) {
+                    <span></span>            echo 'Error: ' . $e-&gt;getMessage();
+                    <span></span>        }
+                    <span></span>    } else {
+                    <span></span>        echo 'Invalid product ID.';
+                    <span></span>    }
+                    <span></span>} else {
+                    <span></span>    echo 'Invalid request method.';
+                    <span></span>}
+                    <span></span>?&gt;
+                </pre>
+            </div>
+        </div>
+        <div style="margin: 4rem 0;">
+            <h2>The class that DELETES items from cart</h2>
+            <div class="code-editor">
+                <h2>delete_from_cart.php</h2>
+                <span class="editor-line"></span>
+                <a href="https://github.com/rtm200/php-shop" target="_blank" class="copy-btn">Full code</a>
+                <pre class="line-numbers">
+                    <span></span>&lt;?php
+                    <span></span>include_once 'db.php';
+
+                    <span></span>$db = new Database();
+                    <span></span>$conn = $db-&gt;connect();
+
+                    <span></span>if (isset($_POST['cart_id'])) {
+                    <span></span>    $cart_id = $_POST['cart_id'];
+
+                    <span></span>    $sql = "DELETE FROM cart WHERE id = :cart_id";
+                    <span></span>    $stmt = $conn-&gt;prepare($sql);
+                    <span></span>    $stmt-&gt;bindParam(':cart_id', $cart_id, PDO::PARAM_INT);
+                    <span></span>    $stmt-&gt;execute();
+                    <span></span>        
+                    <span></span>} else {
+                    <span></span>    echo "Invalid data.";
+                    <span></span>}
+                    <span></span>?&gt;
+                </pre>
+            </div>
+        </div>
+        <div style="margin: 4rem 0;">
+            <h2>Most of the FETCH classes are here</h2>
+            <div class="code-editor">
+                <h2>fetch.php</h2>
+                <span class="editor-line"></span>
+                <a href="https://github.com/rtm200/php-shop" target="_blank" class="copy-btn">Full code</a>
+                <pre class="line-numbers">
+                    <span></span>&lt;?php
+                    <span></span>include_once 'db.php';
+
+                    <span></span>$db = new Database();
+                    <span></span>$conn = $db-&gt;connect();
+
+                    <span></span>class GET {
+                    <span></span>    private $conn;
+
+                    <span></span>    public function __construct() {
+                    <span></span>        $db = new Database();
+                    <span></span>        $this-&gt;conn = $db-&gt;connect(); 
+                    <span></span>    }
+
+                    <span></span>    public function getTotalProducts() {
+                    <span></span>        $sql = "SELECT COUNT(*) AS total FROM products";
+                    <span></span>        $stmt = $this-&gt;conn-&gt;prepare($sql);
+                    <span></span>        $stmt-&gt;execute();
+                    <span></span>        $result = $stmt-&gt;fetch(PDO::FETCH_ASSOC);
+                    <span></span>        return $result['total'];
+                    <span></span>    }
+
+                    <span></span>    public function getProductsPaginated($offset, $limit) {
+                    <span></span>        $sql = "SELECT * FROM products LIMIT :limit OFFSET :offset";
+                    <span></span>        $stmt = $this-&gt;conn-&gt;prepare($sql);
+                    <span></span>        $stmt-&gt;bindParam(':limit', $limit, PDO::PARAM_INT);
+                    <span></span>        $stmt-&gt;bindParam(':offset', $offset, PDO::PARAM_INT);
+                    <span></span>        $stmt-&gt;execute();
+
+                    <span></span>        while ($row = $stmt-&gt;fetch(PDO::FETCH_ASSOC)) {
+                    <span></span>            $id = $row['id'];
+                    <span></span>            $name = $row['name'];
+                    <span></span>            $price = $row['price'];
+                    <span></span>            $image = $row['image'];
+                    <span></span>            $info = $row['info'];
+                    <span></span>            $rate = $row['rating'];
+                    <span></span>            $filledStars = str_repeat('&lt;i class="bx bxs-star"&gt;&lt;/i&gt;', $rate);
+                    <span></span>            $emptyStars = str_repeat('&lt;i class="bx bx-star"&gt;&lt;/i&gt;', 5 - $rate);
+
+                    <span></span>            echo '
+                    <span></span>                &lt;div class="productCard"&gt;
+                    <span></span>                    &lt;img src="' . $image . '"&gt;
+                    <span></span>                    &lt;div class="productCard-content"&gt;
+                    <span></span>                        &lt;div style="flex-wrap: wrap; display: flex; align-items: center; justify-content: space-between;"&gt;
+                    <span></span>                            &lt;h4&gt;' . $name . '&lt;/h4&gt;
+                    <span></span>                            &lt;h5&gt;' . $price . '$&lt;/h5&gt;
+                    <span></span>                        &lt;/div&gt;
+                    <span></span>                        &lt;span class="productLine"&gt;&lt;/span&gt;
+                    <span></span>                        &lt;p&gt;' . $info . '&lt;/p&gt;
+                    <span></span>                        &lt;div style="margin-top: 10px; flex-wrap: wrap; display: flex; align-items: center; justify-content: space-between;"&gt;
+                    <span></span>                            &lt;span class="productRates"&gt;
+                    <span></span>                                ' . $filledStars . $emptyStars . '
+                    <span></span>                            &lt;/span&gt;
+                    <span></span>                            &lt;button class="buy" product-id="' . $id . '"&gt;BUY&lt;/button&gt;
+                    <span></span>                        &lt;/div&gt;
+                    <span></span>                    &lt;/div&gt;
+                    <span></span>                &lt;/div&gt;
+                    <span></span>            ';
+                    <span></span>        }
+                    <span></span>    }
+                        ... // Rest of the class methods
+                    <span></span>?&gt;
+                </pre>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    // Copy code functionality
+    document.querySelector('.copy-btn').addEventListener('click', function () {
+        const code = document.querySelector('.line-numbers').innerText.trim();
+        navigator.clipboard.writeText(code).then(() => {
+            alert('Code copied to clipboard!');
+        });
+    });
+</script>
+<script>
+    //navbar
+    $(document).ready(function () {
+        $(".burger").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(".bx-x").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(".mobile_header-blur").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(window).resize(function () {
+            if (window.innerWidth > 1000) {
+                $(".mobile_header").css("display", "none");
+                $(".mobile_header-blur").css("display", "none");
+            }
+        });
+    });
+</script>
+</html>

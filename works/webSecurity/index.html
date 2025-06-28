@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruzbe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/img/fav.png">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="mobile_header-blur"></div>
+    <div class="mobile_header">
+        <ul>
+            <i class='bx bx-x'></i>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../aboutme.html">About me</a></li>
+            <li><a href="../index.html" style="color: white;font-weight: bold;">Works</a></li>
+            <li><a href="../../contact.html">Contact</a></li>
+            <li><a href="../../aboutme.html">CV</a></li>
+        </ul>
+    </div>
+    <header>
+        <h2><a href="../../index.html" style="text-decoration: none; color: white;">Ruzbe</a></h2>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../aboutme.html">About me</a></li>
+            <li><a href="../index.html" style="color: white;font-weight: bold;">Works</a></li>
+            <li><a href="../../contact.html">Contact</a></li>
+            <li><a href="../../aboutme.html">CV</a></li>
+        </ul>
+        <a href="https://github.com/rtm200" target="_blank" class="talk"><i class='bx bxl-github'></i>Github</a>
+        <i class='bx bx-menu burger'></i>
+    </header>
+
+    <!-- main -->
+    <main>
+        <h3>All Learning Paths</h3>
+        <p>the sections that i worked on</p>
+        <ul>
+            <li>API Testing</li>
+            <li>Cross-site request forgery (CSRF)</li>
+            <li>Clickjacking (UI redressing)</li>
+            <li>Cross-origin resource sharing (CORS)</li>
+            <li>NoSQL injection</li>
+            <li>Authentication vulnerabilities</li>
+            <li>Server-side request forgery (SSRF) attacks</li>
+            <li>Server-side vulnerabilities</li>
+            <li>File upload vulnerabilities</li>
+            <li>Path traversal</li>
+            <li>WebSockets vulnerabilities</li>
+            <li>Web cache deception</li>
+            <li>SQL injection</li>
+        </ul>
+        <h2>And over 100 labs on <a href="https://portswigger.net" target="_blank" style="color: orange;">Portswigger.net</a></h2>
+    </main>
+</body>
+<script>
+    //navbar
+    $(document).ready(function () {
+        $(".burger").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(".bx-x").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(".mobile_header-blur").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(window).resize(function () {
+            if (window.innerWidth > 1000) {
+                $(".mobile_header").css("display", "none");
+                $(".mobile_header-blur").css("display", "none");
+            }
+        });
+    });
+</script>
+
+</html>

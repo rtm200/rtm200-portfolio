@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruzbe</title>
+    <link rel="stylesheet" href="certificates.css">
+    <link rel="icon" type="image/x-icon" href="/img/fav.png">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="mobile_header-blur"></div>
+    <div class="mobile_header">
+        <ul>
+            <i class='bx bx-x'></i>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About me</a></li>
+            <li><a href="works/index.html">Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="aboutme.html">CV</a></li>
+        </ul>
+    </div>
+    <header>
+        <h2><a href="index.html" style="text-decoration: none; color: white;">Ruzbe</a></h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About me</a></li>
+            <li><a href="works/index.html">Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="aboutme.html">CV</a></li>
+        </ul>
+        <a href="https://github.com/rtm200" target="_blank" class="talk"><i class='bx bxl-github'></i>Github</a>
+        <i class='bx bx-menu burger'></i>
+    </header>
+
+    <!-- main -->
+    <main> 
+        <h1>My Certificates</h1>
+        <ol>
+            <h2>Free Code Camp Certificates</h2>
+            <li><a href="https://www.freecodecamp.org/certification/rtm200/responsive-web-design" target="_blank">Responsive Web Design</a></li>
+            <li><a href="https://www.freecodecamp.org/certification/rtm200/javascript-algorithms-and-data-structures-v8" target="_blank">Javascript Algorithms And Data Structures v8</a></li>
+        </ol>
+        <ol>
+            <h2>Kaggle</h2>
+            <li><a href="https://www.kaggle.com/learn/certification/rouzbehattar/python" target="_blank">Python</a></li>
+            <li><a href="https://www.kaggle.com/learn/certification/rouzbehattar2/intro-to-sql" target="_blank">Intro to Sql</a></li>
+            <li><a href="https://www.kaggle.com/learn/certification/rouzbehattar2/advanced-sql" target="_blank">Advanced Sql</a></li>
+        </ol>
+        <ol>
+            <h2>leetcode</h2>
+            <li><a href="https://leetcode.com/u/rouzbehattar/" target="_blank">Check My Profile</a></li>
+        </ol>
+        <ol>
+            <h2>CTFs</h2>
+            <li><a href="https://play.picoctf.org/users/rouzbehattar" target="_blank">picoCTF</a></li>
+        </ol>
+    </main>
+</body>
+<script>
+    //navbar
+    $(document).ready(function () {
+        $(".burger").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(".bx-x").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(".mobile_header-blur").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(window).resize(function () {
+            if (window.innerWidth > 1000) {
+                $(".mobile_header").css("display", "none");
+                $(".mobile_header-blur").css("display", "none");
+            }
+        });
+    });
+</script>
+
+</html>

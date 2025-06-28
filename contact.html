@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruzbe</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="icon" type="image/x-icon" href="/img/fav.png">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="mobile_header-blur"></div>
+    <div class="mobile_header">
+        <ul>
+            <i class='bx bx-x'></i>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About me</a></li>
+            <li><a href="works/index.html">Works</a></li>
+            <li><a href="contact.html" style="color: white;font-weight: bold;">Contact</a></li>
+            <li><a href="aboutme.html">CV</a></li>
+        </ul>
+    </div>
+    <header>
+        <h2><a href="index.html" style="text-decoration: none; color: white;">Ruzbe</a></h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About me</a></li>
+            <li><a href="works/index.html">Works</a></li>
+            <li><a href="contact.html" style="color: white;font-weight: bold;">Contact</a></li>
+            <li><a href="aboutme.html">CV</a></li>
+        </ul>
+        <a href="https://github.com/rtm200" target="_blank" class="talk"><i class='bx bxl-github'></i>Github</a>
+        <i class='bx bx-menu burger'></i>
+    </header>
+
+    <!-- main -->
+    <main>
+        <h3>All the Ways to Reach Me</h3>
+        <p>I'm more active on Telegram.</p>
+        <div class="cards">
+            <a href="https://t.me/rouzbehattar" target="_blank"><i class='bx bxl-telegram'></i>Telegram</a>
+            <a href="https://wa.me/905349892256" target="_blank"><i class='bx bxl-whatsapp'></i>Whatsapp</a>
+            <a href="https://www.instagram.com/_rtm200/" target="_blank"><i class='bx bxl-instagram'></i>Instagram</a>
+            <a href="mailto:rouzbehattar@gmail.com" target="_blank"><i class='bx bxl-gmail'></i>Gmail</a>
+            <a href="tel:905349892256" target="_blank"><i class='bx bx-phone'></i>Phone</a>
+            <a href="https://github.com/rtm200" target="_blank"><i class='bx bxl-github'></i>Github</a>
+        </div>
+    </main>
+</body>
+<script>
+    //navbar
+    $(document).ready(function () {
+        $(".burger").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(".bx-x").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(".mobile_header-blur").click(function () {
+            $(".mobile_header").toggle();
+            $(".mobile_header-blur").toggle();
+        });
+        $(window).resize(function () {
+            if (window.innerWidth > 1000) {
+                $(".mobile_header").css("display", "none");
+                $(".mobile_header-blur").css("display", "none");
+            }
+        });
+    });
+</script>
+
+</html>
