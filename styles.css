@@ -237,8 +237,21 @@ header .burger {
     border-radius: 9px;
 }
 
-.first_left img {
+.first_left_imgBox {
+    max-width: 220px;
+    height: 220px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 9px;
+}
+
+.first_left img {
+    width: 100%;
+    object-fit: cover;
+    scale: 1.5;
+    margin-top: 40px;
 }
 
 .first_left_content {
