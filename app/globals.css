@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #fafafa;
+  --bg-secondary: #ffffff;
+  --bg-elevated: #f0f0f0;
+  --text-primary: #0a0a0a;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --border: #e5e5e5;
+  --border-strong: #d1d5db;
+  --accent: #3b82f6;
+  --accent-warm: #f59e0b;
+  --accent-green: #10b981;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.dark {
+  --bg: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-elevated: #1a1a1a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --border: #1f1f1f;
+  --border-strong: #2d2d2d;
+  --accent: #60a5fa;
+  --accent-warm: #fbbf24;
+  --accent-green: #34d399;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-elevated) 25%, var(--border) 50%, var(--bg-elevated) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Modal backdrop blur */
+.modal-backdrop {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Grid hover overlay */
+.grid-item-overlay {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.grid-item:hover .grid-item-overlay {
+  opacity: 1;
+}
+
+/* Smooth transitions for theme */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
+
+/* Override for animations - don't auto-transition everything */
+.no-transition, .no-transition *, button, a, [role="button"] {
+  transition: none;
+}
+button, a, [role="button"] {
+  transition: all 0.2s ease;
+}
