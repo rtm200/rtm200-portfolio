@@ -98,7 +98,7 @@ export const projects: Project[] = [
     thumbnail: "",
     tags: ["PHP", "Mysql", "Javascript", "Restful Api"],
     github: "https://github.com/rtm200/movify",
-    demo: "https://rtm200.github.io/movify/",
+    demo: "https://rtm200.github.io/Movify/",
     pinned: true,
     likes: 189,
     views: 3100,
