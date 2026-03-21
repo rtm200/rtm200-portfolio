@@ -80,7 +80,7 @@ export const projects: Project[] = [
     description: "Movie discovery app with TMDB Api.",
     fullDescription:
       "You can browse and search movies, the details are getting fetched from realtime TMDB api.",
-    thumbnail: "projects/movify.png",
+    thumbnail: "projects/Movify.png",
     tags: ["HTML/CSS", "JavaScript", "Api"],
     github: "https://github.com/rtm200/movify",
     demo: "https://rtm200.github.io/movify/",
