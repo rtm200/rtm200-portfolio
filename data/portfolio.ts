@@ -91,7 +91,7 @@ export const projects: Project[] = [
   },
   {
     id: "3",
-    title: "Pokemon API Dashboard",
+    title: "Pokemon Restful API",
     description: "its a small Restful Api system with php and mysql",
     fullDescription:
       "This is a backend project designed for storing pokemon data in our database and providing them for users.",
