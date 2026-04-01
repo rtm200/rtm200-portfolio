@@ -387,7 +387,7 @@ export const articles: Article[] = [
     readTime: "3 min read",
     tags: ["System Design", "Database Security", "Security"],
     mediumUrl: "https://medium.com/@rouzbehattar/how-i-built-an-end-to-end-encrypted-live-chat-system-in-php-3df6c86d899e",
-    color: "#3b82f6",
+    color: "#E63BF6",
     language: "eng",
   },
 ];
