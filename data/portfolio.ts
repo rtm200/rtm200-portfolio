@@ -379,6 +379,17 @@ export const articles: Article[] = [
     color: "#3b82f6",
     language: "tr",
   },
+  {
+    id: "2",
+    title: "How I Built an End-to-End Encrypted Live Chat System in PHP",
+    description: "I developed a secure, mini chat system, designed to ensure complete privacy for users. The system implements end-to-end encryption (E2EE), meaning that all messages are encrypted on the sender’s device and can only be decrypted by the intended receiver.",
+    date: "Apr 2026",
+    readTime: "3 min read",
+    tags: ["System Design", "Database Security", "Security"],
+    mediumUrl: "https://medium.com/@rouzbehattar/how-i-built-an-end-to-end-encrypted-live-chat-system-in-php-3df6c86d899e",
+    color: "#3b82f6",
+    language: "eng",
+  },
 ];
 
 
