@@ -59,6 +59,22 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  
+  {
+    id: "0",
+    title: "NetWire",
+    description: "Online multiplayer word scramble game built with Next.js and supabase.",
+    fullDescription:
+      "NetWire is an online multiplayer word scramble game built using Next.js and Supabase. Players can create or join game rooms, compete to unscramble words, and track their scores in real-time.",
+    thumbnail: "projects/netwire.png",
+    tags: ["Nextjs", "TypeScript", "Tailwind", "Supabase", "Game"],
+    github: "#",
+    demo: "https://netwire.vercel.app/",
+    pinned: true,
+    likes: 1142,
+    views: 6100,
+    color: "#C73232",
+  },
   {
     id: "1",
     title: "LinkedIn UI",
@@ -76,6 +92,21 @@ export const projects: Project[] = [
   },
   {
     id: "2",
+    title: "Task Manager",
+    description: "A modern and minimal task manager web/mobile application built with Next.js and React Native.",
+    fullDescription:
+      "This task manager has a web app and a mobile app that uses sqlite database and you can sync your data via internal network from web to phone app",
+    thumbnail: "projects/taskmanager.png",
+    tags: ["Nextjs", "React Native", "Tailwind", "sqlite", "Mobile App"],
+    github: "https://github.com/rtm200/task_manager",
+    demo: "#",
+    pinned: true,
+    likes: 512,
+    views: 2100,
+    color: "#C7C7C7",
+  },
+  {
+    id: "3",
     title: "MoviFy",
     description: "Movie discovery app with TMDB Api.",
     fullDescription:
@@ -90,7 +121,7 @@ export const projects: Project[] = [
     color: "#C73232",
   },
   {
-    id: "3",
+    id: "4",
     title: "Pokemon Restful API",
     description: "its a small Restful Api system with php and mysql",
     fullDescription:
@@ -105,7 +136,7 @@ export const projects: Project[] = [
     color: "#10b981",
   },
   {
-    id: "4",
+    id: "5",
     title: "Valorant Clone",
     description: "A Clone of Valorant's homepage theme.",
     fullDescription:
@@ -120,7 +151,7 @@ export const projects: Project[] = [
     color: "#f59e0b",
   },
   {
-    id: "5",
+    id: "6",
     title: "Uber Clone",
     description: "A Clone of Uber's homepage theme.",
     fullDescription:
@@ -135,7 +166,7 @@ export const projects: Project[] = [
     color: "#C7C7C7",
   },
   {
-    id: "6",
+    id: "7",
     title: "Spotify Clone",
     description: "A Clone of Spotify's homepage theme.",
     fullDescription:
