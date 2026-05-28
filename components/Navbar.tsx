@@ -21,16 +21,7 @@ export function Navbar() {
     >
       <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <span className="relative flex items-center justify-center h-3 w-3">
-            <span className="animate-ping inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-          </span>
-          <span 
-            className="text-sm font-semibold tracking-tight" 
-            style={{ color: "var(--text-primary, #ffffff)" }}
-          >
-            Live
-          </span>
+          
         </div>
 
         <button
